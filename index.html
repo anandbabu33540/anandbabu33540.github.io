@@ -62,11 +62,47 @@
                 </div>
             </div>
         </div>
-        <div class="hero-image-container">
-            <div class="glowing-border">
-                <img src="1000010529.png" alt="Anand Babu" class="profile-img">
-            </div>
-        </div>
+        <!-- 3D Model Button -->
+<button class="model-btn" id="openModel">
+  <span>✦</span> Explore My 3D Model
+</button>
+
+<!-- 3D Modal -->
+<div class="model-modal" id="modelModal">
+  <div class="modal-backdrop" id="closeModel"></div>
+
+  <div class="model-modal-content">
+    <button class="modal-close" id="closeModelBtn" aria-label="Close">
+      &times;
+    </button>
+
+    <div class="modal-header">
+      <div>
+        <span class="modal-tag">DIGITAL IDENTITY</span>
+        <h2>My 3D World</h2>
+        <p>Same person. Higher dimension.</p>
+      </div>
+      <span class="status-dot">● ONLINE</span>
+    </div>
+
+    <div class="model-image-container">
+      <img
+        src="assets/3d-model.png"
+        alt="Anand Babu 3D digital portrait"
+      />
+    </div>
+
+    <div class="modal-footer">
+      <div>
+        <strong>ANAND BABU</strong>
+        <span>Student · Developer · Dreamer</span>
+      </div>
+      <button class="close-bottom" id="closeModelBottom">
+        Close <span>↗</span>
+      </button>
+    </div>
+  </div>
+</div>
     </section>
 
     <!-- About Section & Currently Learning -->
