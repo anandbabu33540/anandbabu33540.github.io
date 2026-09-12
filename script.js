@@ -208,3 +208,33 @@ animateParticles();
 themeBtn.addEventListener('click', () => {
     setTimeout(initParticles, 100);
 });
+// ================================
+// 3D MODEL MODAL
+// ================================
+
+const modelModal = document.getElementById("modelModal");
+const openModel = document.getElementById("openModel");
+const closeModel = document.getElementById("closeModel");
+const closeModelBtn = document.getElementById("closeModelBtn");
+const closeModelBottom = document.getElementById("closeModelBottom");
+
+function openModal() {
+  modelModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+  modelModal.classList.remove("active");
+  document.body.style.overflow = "";
+}
+
+openModel.addEventListener("click", openModal);
+closeModel.addEventListener("click", closeModal);
+closeModelBtn.addEventListener("click", closeModal);
+closeModelBottom.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
