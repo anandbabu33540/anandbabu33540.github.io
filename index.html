@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anand Babu | AI & Data Science Portfolio</title>
-    <meta name="description" content="Portfolio of Anand Babu, Aspiring AI/ML Engineer & Data Scientist.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Anand Babu | AI/ML Engineer & Data Scientist</title>
+    <meta name="description" content="Portfolio of Anand Babu, Aspiring AI/ML Engineer and Data Scientist.">
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <!-- AI Neural Network Background -->
+    <canvas id="networkCanvas"></canvas>
 
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">A<span>B</span></div>
+        <div class="logo">AB<span>.</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -22,193 +26,236 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="nav-controls">
-            <button id="theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
-            <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
-        </div>
+        <button id="theme-toggle" class="icon-btn"><i class="fas fa-sun"></i></button>
+        <button id="menu-btn" class="icon-btn mobile-only"><i class="fas fa-bars"></i></button>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content reveal">
-            <p class="greeting">Hi everyone, I'm</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero section-padding">
+        <div class="hero-content">
+            <h3 class="greeting">Hello, I'm</h3>
             <h1 class="name">Anand Babu</h1>
-            <h2 class="typing-text">I am a <span id="typewriter"></span><span class="cursor">|</span></h2>
-            <p class="headline">B.Tech CSE (AI) @ University of Lucknow | BS Degree @ IIT Madras</p>
-            <p class="tagline">Building my journey in Artificial Intelligence, Machine Learning and Data Science.</p>
+            <h2 class="typing-container">A <span class="typing-text"></span><span class="cursor">|</span></h2>
+            <p class="tagline">B.Tech CSE (AI) @ University of Lucknow | BS Degree @ IIT Madras<br><br>Building my journey in Artificial Intelligence, Machine Learning and Data Science.</p>
             
             <div class="stats-container">
-                <div class="stat-box">
-                    <span class="stat-val">2</span>
-                    <span class="stat-label">Academic Paths</span>
+                <div class="stat-card glass-panel">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>2 Academic Paths</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-val">AI+DS</span>
-                    <span class="stat-label">Core Focus</span>
+                <div class="stat-card glass-panel">
+                    <i class="fas fa-brain"></i>
+                    <span>AI + Data Science</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-val"><i class="fa-solid fa-infinity"></i></span>
-                    <span class="stat-label">Always Learning</span>
+                <div class="stat-card glass-panel">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>Always Learning</span>
                 </div>
             </div>
 
-            <div class="hero-buttons">
+            <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Connect With Me</a>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/anand-babu-24bb4a322/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/anandbabu33540" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:anandbabu00125@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/anand-babu-24bb4a322/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/anandbabu33540" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
             </div>
         </div>
-        <div class="hero-image reveal">
-            <div class="image-wrapper">
-                <!-- Yahan aapki photo ka naam update kar diya gaya hai -->
-                <img src="1000010529.png" alt="Anand Babu Profile Photo">
+        <div class="hero-image-container">
+            <div class="glowing-border">
+                <img src="1000010529.png" alt="Anand Babu" class="profile-img">
             </div>
         </div>
     </section>
 
-    <section id="about" class="about section">
-        <h2 class="section-title reveal">About <span>Me</span></h2>
-        <div class="glass-card reveal">
-            <p>I am a dedicated and aspiring AI/ML Engineer and Data Scientist, currently pursuing dual academic paths to build a rigorous foundation in technology and analytics. With a B.Tech in CSE (Artificial Intelligence) from the University of Lucknow and a BS Degree in Data Science from IIT Madras, I merge theoretical computer science with advanced data-driven problem-solving.</p>
-            <p>My passion lies in extracting insights from data and building intelligent systems that learn and adapt. I am constantly exploring the bleeding edge of Generative AI, Machine Learning algorithms, and data architectures.</p>
+    <!-- About Section & Currently Learning -->
+    <section id="about" class="section-padding reveal">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-grid">
+            <div class="about-text glass-panel">
+                <p>I am an aspiring AI/ML Engineer and Data Scientist, navigating a unique dual-degree educational journey. With a foundation in Computer Science (AI) from the University of Lucknow and advanced Data Science training from IIT Madras, I am deeply passionate about leveraging data to build intelligent systems.</p>
+                <br>
+                <p>My goal is to bridge the gap between theoretical algorithms and real-world technological solutions, constantly pushing the boundaries of what machine learning can achieve.</p>
+            </div>
+            <div class="currently-learning glass-panel">
+                <h3>Currently Learning</h3>
+                <div class="badges">
+                    <span class="badge"><i class="fab fa-python"></i> Python</span>
+                    <span class="badge"><i class="fas fa-code-branch"></i> DSA</span>
+                    <span class="badge"><i class="fas fa-robot"></i> Machine Learning</span>
+                    <span class="badge"><i class="fas fa-chart-pie"></i> Data Science</span>
+                    <span class="badge"><i class="fas fa-brain"></i> Generative AI</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="education" class="education section">
-        <h2 class="section-title reveal">My <span>Education</span></h2>
+    <!-- Education Section -->
+    <section id="education" class="section-padding reveal">
+        <h2 class="section-title">My <span>Education</span></h2>
         <div class="timeline">
-            <div class="timeline-item reveal">
+            <div class="timeline-item glass-panel">
                 <div class="timeline-dot"></div>
-                <div class="timeline-content glass-card">
-                    <h3>B.Tech in Computer Science & Engineering (AI)</h3>
-                    <h4>University of Lucknow</h4>
-                    <p>Focusing on foundational computer science principles intertwined with specialized artificial intelligence applications.</p>
-                </div>
+                <h3>B.Tech in Computer Science & Engineering (AI)</h3>
+                <h4>University of Lucknow</h4>
+                <p>Pursuing an engineering degree with a specialization in Artificial Intelligence.</p>
             </div>
-            <div class="timeline-item reveal">
+            <div class="timeline-item glass-panel">
                 <div class="timeline-dot"></div>
-                <div class="timeline-content glass-card">
-                    <h3>BS Degree in Data Science</h3>
-                    <h4>IIT Madras</h4>
-                    <p>Rigorous curriculum covering statistics, data analysis, machine learning algorithms, and real-world data problem-solving.</p>
-                </div>
+                <h3>BS Degree in Data Science</h3>
+                <h4>IIT Madras</h4>
+                <p>Acquiring deep, foundational, and applied knowledge in Data Science and analytics from a premier institute.</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills section">
-        <h2 class="section-title reveal">Tech <span>Arsenal</span></h2>
-        
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding reveal">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
         <div class="skills-grid">
-            <div class="skill-card glass-card reveal">
-                <i class="fa-brands fa-python"></i>
+            <div class="skill-card glass-panel tilt">
+                <i class="fab fa-python skill-icon"></i>
                 <h3>Python</h3>
                 <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
             </div>
-            <div class="skill-card glass-card reveal">
-                <i class="fa-solid fa-brain"></i>
+            <div class="skill-card glass-panel tilt">
+                <i class="fas fa-chart-line skill-icon"></i>
+                <h3>Data Science</h3>
+                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-card glass-panel tilt">
+                <i class="fas fa-robot skill-icon"></i>
                 <h3>Machine Learning</h3>
                 <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
             </div>
-            <div class="skill-card glass-card reveal">
-                <i class="fa-solid fa-database"></i>
-                <h3>Data Science & Analysis</h3>
-                <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-            </div>
-            <div class="skill-card glass-card reveal">
-                <i class="fa-solid fa-server"></i>
-                <h3>SQL</h3>
+            <div class="skill-card glass-panel tilt">
+                <i class="fas fa-brain skill-icon"></i>
+                <h3>Artificial Intelligence</h3>
                 <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
             </div>
-            <div class="skill-card glass-card reveal">
-                <i class="fa-solid fa-network-wired"></i>
-                <h3>Artificial Intelligence</h3>
-                <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-            </div>
-            <div class="skill-card glass-card reveal">
-                <i class="fa-brands fa-git-alt"></i>
-                <h3>Git / GitHub</h3>
+            <div class="skill-card glass-panel tilt">
+                <i class="fas fa-database skill-icon"></i>
+                <h3>SQL</h3>
                 <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
             </div>
-        </div>
-
-        <h3 class="subsection-title reveal" style="margin-top: 3rem;">Currently <span>Learning</span></h3>
-        <div class="learning-tags reveal">
-            <span class="tag">Generative AI</span>
-            <span class="tag">Data Structures & Algorithms</span>
-            <span class="tag">Deep Learning Frameworks</span>
-        </div>
-    </section>
-
-    <section id="projects" class="projects section">
-        <h2 class="section-title reveal">Featured <span>Projects</span></h2>
-        <div class="project-grid">
-            <div class="project-card glass-card reveal">
-                <div class="project-info">
-                    <h3>Predictive Analysis Model</h3>
-                    <p>A machine learning model designed to predict outcomes using historical datasets. Utilizes random forests and gradient boosting.</p>
-                    <div class="tech-stack">
-                        <span>Python</span><span>Scikit-Learn</span><span>Pandas</span>
-                    </div>
-                    <a href="https://github.com/anandbabu33540" target="_blank" class="btn btn-small"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
+            <div class="skill-card glass-panel tilt">
+                <i class="fas fa-chart-bar skill-icon"></i>
+                <h3>Data Analysis</h3>
+                <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
             </div>
-            <div class="project-card glass-card reveal">
-                <div class="project-info">
-                    <h3>Computer Vision Tool</h3>
-                    <p>An AI-powered tool capable of classifying images and detecting objects in real-time using convolutional neural networks.</p>
-                    <div class="tech-stack">
-                        <span>Python</span><span>OpenCV</span><span>TensorFlow</span>
-                    </div>
-                    <a href="https://github.com/anandbabu33540" target="_blank" class="btn btn-small"><i class="fa-brands fa-github"></i> View Code</a>
-                </div>
+            <div class="skill-card glass-panel tilt">
+                <i class="fab fa-github skill-icon"></i>
+                <h3>Git/GitHub</h3>
+                <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
             </div>
         </div>
     </section>
 
-    <section id="journey" class="journey section">
-        <h2 class="section-title reveal">Journey & <span>Goals</span></h2>
-        <div class="glass-card reveal">
-            <ul class="goals-list">
-                <li><i class="fa-solid fa-rocket"></i> <strong>Goal:</strong> Transition from academic mastery to building scalable, production-ready AI systems.</li>
-                <li><i class="fa-solid fa-trophy"></i> <strong>Achievement:</strong> Simultaneously managing rigorous coursework at UoL and IIT Madras.</li>
-                <li><i class="fa-solid fa-bullseye"></i> <strong>Focus:</strong> Seeking internships and opportunities to apply theoretical Data Science knowledge to real-world business challenges.</li>
-            </ul>
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding reveal">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <div class="projects-grid">
+            <!-- Project 1 Placeholder -->
+            <div class="project-card glass-panel tilt">
+                <div class="project-img-placeholder">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="project-info">
+                    <h3>[Project Name 1]</h3>
+                    <p>A brief description of this AI/ML project. Explain the problem solved and the models utilized.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>TensorFlow</span><span>Pandas</span>
+                    </div>
+                    <a href="https://github.com/anandbabu33540" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Source</a>
+                </div>
+            </div>
+            <!-- Project 2 Placeholder -->
+            <div class="project-card glass-panel tilt">
+                <div class="project-img-placeholder">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="project-info">
+                    <h3>[Project Name 2]</h3>
+                    <p>A brief description of a Data Science project focusing on visualization and analytics.</p>
+                    <div class="tech-stack">
+                        <span>SQL</span><span>Python</span><span>Scikit-Learn</span>
+                    </div>
+                    <a href="https://github.com/anandbabu33540" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Source</a>
+                </div>
+            </div>
+            <!-- Project 3 Placeholder -->
+            <div class="project-card glass-panel tilt">
+                <div class="project-img-placeholder">
+                    <i class="fas fa-image"></i>
+                </div>
+                <div class="project-info">
+                    <h3>[Project Name 3]</h3>
+                    <p>An application utilizing Generative AI or NLP techniques to generate insights.</p>
+                    <div class="tech-stack">
+                        <span>Generative AI</span><span>HuggingFace</span>
+                    </div>
+                    <a href="https://github.com/anandbabu33540" target="_blank" class="btn btn-outline"><i class="fab fa-github"></i> View Source</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="contact section">
-        <h2 class="section-title reveal">Get In <span>Touch</span></h2>
-        <div class="contact-container reveal">
-            <div class="contact-info glass-card">
+    <!-- Journey & Achievements -->
+    <section id="journey" class="section-padding reveal">
+        <h2 class="section-title">My AI/ML <span>Journey & Goals</span></h2>
+        <div class="journey-container glass-panel">
+            <div class="journey-content">
+                <h3>Achievements / Certifications</h3>
+                <ul class="achievement-list">
+                    <li><i class="fas fa-check-circle"></i> [Placeholder: Hackathon / Competition Achievement]</li>
+                    <li><i class="fas fa-check-circle"></i> [Placeholder: Relevant Certification (e.g., Coursera/Kaggle)]</li>
+                    <li><i class="fas fa-check-circle"></i> Pursuing Dual Degrees concurrently, demonstrating high academic rigor.</li>
+                </ul>
+                <h3 style="margin-top: 2rem;">Future Goals</h3>
+                <p>To architect scalable AI solutions, contribute to open-source machine learning frameworks, and solve real-world problems utilizing predictive modeling and data engineering.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding reveal">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-container">
+            <div class="contact-info glass-panel">
                 <h3>Let's Connect</h3>
-                <p>I'm currently open for internship opportunities, collaborations, or just a chat about AI and Data Science!</p>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:anandbabu00125@gmail.com">anandbabu00125@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/anand-babu-24bb4a322/" target="_blank">LinkedIn Profile</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-github"></i>
-                    <a href="https://github.com/anandbabu33540" target="_blank">GitHub Profile</a>
+                <p>I'm currently open for opportunities, internships, and collaborations. Feel free to reach out!</p>
+                <div class="contact-links">
+                    <a href="mailto:anandbabu00125@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        anandbabu00125@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/anand-babu-24bb4a322/" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        LinkedIn Profile
+                    </a>
+                    <a href="https://github.com/anandbabu33540" target="_blank" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        GitHub Profile
+                    </a>
                 </div>
             </div>
+            <form class="contact-form glass-panel" onsubmit="event.preventDefault(); alert('This is a static portfolio. Please use the email link to contact me!');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; <span id="year"></span> Anand Babu. All rights reserved.</p>
-            <div class="footer-socials">
-                <a href="https://www.linkedin.com/in/anand-babu-24bb4a322/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/anandbabu33540" target="_blank"><i class="fa-brands fa-github"></i></a>
-            </div>
+        <p>&copy; <span id="year"></span> Anand Babu. Built for the Future.</p>
+        <div class="footer-socials">
+            <a href="https://www.linkedin.com/in/anand-babu-24bb4a322/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/anandbabu33540" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:anandbabu00125@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
 
